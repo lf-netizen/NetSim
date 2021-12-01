@@ -128,6 +128,30 @@ NetSim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/build
 .PHONY : NetSim/fast
 
+factory/src/factory.obj: factory/src/factory.cpp.obj
+.PHONY : factory/src/factory.obj
+
+# target to build an object file
+factory/src/factory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/factory/src/factory.cpp.obj
+.PHONY : factory/src/factory.cpp.obj
+
+factory/src/factory.i: factory/src/factory.cpp.i
+.PHONY : factory/src/factory.i
+
+# target to preprocess a source file
+factory/src/factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/factory/src/factory.cpp.i
+.PHONY : factory/src/factory.cpp.i
+
+factory/src/factory.s: factory/src/factory.cpp.s
+.PHONY : factory/src/factory.s
+
+# target to generate assembly for a file
+factory/src/factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/factory/src/factory.cpp.s
+.PHONY : factory/src/factory.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -152,6 +176,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+net_nodes/src/nodes.obj: net_nodes/src/nodes.cpp.obj
+.PHONY : net_nodes/src/nodes.obj
+
+# target to build an object file
+net_nodes/src/nodes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.obj
+.PHONY : net_nodes/src/nodes.cpp.obj
+
+net_nodes/src/nodes.i: net_nodes/src/nodes.cpp.i
+.PHONY : net_nodes/src/nodes.i
+
+# target to preprocess a source file
+net_nodes/src/nodes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.i
+.PHONY : net_nodes/src/nodes.cpp.i
+
+net_nodes/src/nodes.s: net_nodes/src/nodes.cpp.s
+.PHONY : net_nodes/src/nodes.s
+
+# target to generate assembly for a file
+net_nodes/src/nodes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.s
+.PHONY : net_nodes/src/nodes.cpp.s
+
+semiproducts/src/package.obj: semiproducts/src/package.cpp.obj
+.PHONY : semiproducts/src/package.obj
+
+# target to build an object file
+semiproducts/src/package.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.obj
+.PHONY : semiproducts/src/package.cpp.obj
+
+semiproducts/src/package.i: semiproducts/src/package.cpp.i
+.PHONY : semiproducts/src/package.i
+
+# target to preprocess a source file
+semiproducts/src/package.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.i
+.PHONY : semiproducts/src/package.cpp.i
+
+semiproducts/src/package.s: semiproducts/src/package.cpp.s
+.PHONY : semiproducts/src/package.s
+
+# target to generate assembly for a file
+semiproducts/src/package.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.s
+.PHONY : semiproducts/src/package.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +233,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... NetSim
+	@echo ... factory/src/factory.obj
+	@echo ... factory/src/factory.i
+	@echo ... factory/src/factory.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... net_nodes/src/nodes.obj
+	@echo ... net_nodes/src/nodes.i
+	@echo ... net_nodes/src/nodes.s
+	@echo ... semiproducts/src/package.obj
+	@echo ... semiproducts/src/package.i
+	@echo ... semiproducts/src/package.s
 .PHONY : help
 
 

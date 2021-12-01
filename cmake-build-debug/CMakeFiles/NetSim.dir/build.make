@@ -78,19 +78,64 @@ CMakeFiles/NetSim.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NetSim.dir/main.cpp.s"
 	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\main.cpp" -o CMakeFiles\NetSim.dir\main.cpp.s
 
+CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.obj: CMakeFiles/NetSim.dir/flags.make
+CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.obj: ../semiproducts/src/package.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.obj"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\NetSim.dir\semiproducts\src\package.cpp.obj -c "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\semiproducts\src\package.cpp"
+
+CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.i"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\semiproducts\src\package.cpp" > CMakeFiles\NetSim.dir\semiproducts\src\package.cpp.i
+
+CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.s"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\semiproducts\src\package.cpp" -o CMakeFiles\NetSim.dir\semiproducts\src\package.cpp.s
+
+CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.obj: CMakeFiles/NetSim.dir/flags.make
+CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.obj: ../net_nodes/src/nodes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.obj"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\NetSim.dir\net_nodes\src\nodes.cpp.obj -c "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\net_nodes\src\nodes.cpp"
+
+CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.i"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\net_nodes\src\nodes.cpp" > CMakeFiles\NetSim.dir\net_nodes\src\nodes.cpp.i
+
+CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.s"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\net_nodes\src\nodes.cpp" -o CMakeFiles\NetSim.dir\net_nodes\src\nodes.cpp.s
+
+CMakeFiles/NetSim.dir/factory/src/factory.cpp.obj: CMakeFiles/NetSim.dir/flags.make
+CMakeFiles/NetSim.dir/factory/src/factory.cpp.obj: ../factory/src/factory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NetSim.dir/factory/src/factory.cpp.obj"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\NetSim.dir\factory\src\factory.cpp.obj -c "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\factory\src\factory.cpp"
+
+CMakeFiles/NetSim.dir/factory/src/factory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NetSim.dir/factory/src/factory.cpp.i"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\factory\src\factory.cpp" > CMakeFiles\NetSim.dir\factory\src\factory.cpp.i
+
+CMakeFiles/NetSim.dir/factory/src/factory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NetSim.dir/factory/src/factory.cpp.s"
+	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\factory\src\factory.cpp" -o CMakeFiles\NetSim.dir\factory\src\factory.cpp.s
+
 # Object files for target NetSim
 NetSim_OBJECTS = \
-"CMakeFiles/NetSim.dir/main.cpp.obj"
+"CMakeFiles/NetSim.dir/main.cpp.obj" \
+"CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.obj" \
+"CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.obj" \
+"CMakeFiles/NetSim.dir/factory/src/factory.cpp.obj"
 
 # External object files for target NetSim
 NetSim_EXTERNAL_OBJECTS =
 
 NetSim.exe: CMakeFiles/NetSim.dir/main.cpp.obj
+NetSim.exe: CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.obj
+NetSim.exe: CMakeFiles/NetSim.dir/net_nodes/src/nodes.cpp.obj
+NetSim.exe: CMakeFiles/NetSim.dir/factory/src/factory.cpp.obj
 NetSim.exe: CMakeFiles/NetSim.dir/build.make
 NetSim.exe: CMakeFiles/NetSim.dir/linklibs.rsp
 NetSim.exe: CMakeFiles/NetSim.dir/objects1.rsp
 NetSim.exe: CMakeFiles/NetSim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable NetSim.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable NetSim.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\NetSim.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

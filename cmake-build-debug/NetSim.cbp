@@ -80,7 +80,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/factory/include/factory.hpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/factory/src/factory.cpp">
+			<Option target="NetSim"/>
+		</Unit>
 		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/main.cpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/net_nodes/include/nodes.hpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/net_nodes/src/nodes.cpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/include/package.hpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/include/storage_types.hpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/include/types.hpp">
+			<Option target="NetSim"/>
+		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/src/package.cpp">
 			<Option target="NetSim"/>
 		</Unit>
 		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/CMakeLists.txt">
