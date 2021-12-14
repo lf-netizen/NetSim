@@ -3,3 +3,11 @@
 //
 
 // definicje funkcjonalności package.hpp
+#include "package.hpp"
+
+
+Package & Package::operator=(Package &&other) {
+    id_ = other.id_;
+    return *this;
+}
+

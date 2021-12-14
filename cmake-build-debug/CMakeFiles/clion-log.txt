@@ -1,5 +1,28 @@
-"D:\CLion\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim"
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\lukas\CLionProjects\NetSim
+CMake Deprecation Warning at C:/Users/lukas/CLionProjects/googletest-master/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at C:/Users/lukas/CLionProjects/googletest-master/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at C:/Users/lukas/CLionProjects/googletest-master/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug
-CMake File API: C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug: target-NetSim-Debug-0abe2606c68b502fa27c.json: no CMakeLists.txt file at 'C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\CMakeLists.txt'
+-- Build files have been written to: C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug

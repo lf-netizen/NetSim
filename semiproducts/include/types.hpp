@@ -6,6 +6,7 @@
 #define NETSIM_TYPES_HPP
 
 // definicja ElementID
-using ElementID =
+
+using ElementID = std::size_t;
 
 #endif //NETSIM_TYPES_HPP
