@@ -1,5 +1,0 @@
-"D:\CLion\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug
-CMake File API: C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug: target-NetSim-Debug-0abe2606c68b502fa27c.json: no CMakeLists.txt file at 'C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\CMakeLists.txt'
