@@ -224,6 +224,30 @@ semiproducts/src/package.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/package.cpp.s
 .PHONY : semiproducts/src/package.cpp.s
 
+semiproducts/src/storage_types.obj: semiproducts/src/storage_types.cpp.obj
+.PHONY : semiproducts/src/storage_types.obj
+
+# target to build an object file
+semiproducts/src/storage_types.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/storage_types.cpp.obj
+.PHONY : semiproducts/src/storage_types.cpp.obj
+
+semiproducts/src/storage_types.i: semiproducts/src/storage_types.cpp.i
+.PHONY : semiproducts/src/storage_types.i
+
+# target to preprocess a source file
+semiproducts/src/storage_types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/storage_types.cpp.i
+.PHONY : semiproducts/src/storage_types.cpp.i
+
+semiproducts/src/storage_types.s: semiproducts/src/storage_types.cpp.s
+.PHONY : semiproducts/src/storage_types.s
+
+# target to generate assembly for a file
+semiproducts/src/storage_types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NetSim.dir\build.make CMakeFiles/NetSim.dir/semiproducts/src/storage_types.cpp.s
+.PHONY : semiproducts/src/storage_types.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -245,6 +269,9 @@ help:
 	@echo ... semiproducts/src/package.obj
 	@echo ... semiproducts/src/package.i
 	@echo ... semiproducts/src/package.s
+	@echo ... semiproducts/src/storage_types.obj
+	@echo ... semiproducts/src/storage_types.i
+	@echo ... semiproducts/src/storage_types.s
 .PHONY : help
 
 

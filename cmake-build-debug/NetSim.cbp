@@ -107,6 +107,9 @@
 		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/src/package.cpp">
 			<Option target="NetSim"/>
 		</Unit>
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/src/storage_types.cpp">
+			<Option target="NetSim"/>
+		</Unit>
 		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

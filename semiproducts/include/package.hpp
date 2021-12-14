@@ -5,4 +5,9 @@
 #ifndef NETSIM_PACKAGE_HPP
 #define NETSIM_PACKAGE_HPP
 
+// definicja klasy Package
+class Package {
+
+};
+
 #endif //NETSIM_PACKAGE_HPP
