@@ -8,108 +8,106 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug"/>
+				<Option working_dir="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NetSim">
-				<Option output="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/NetSim.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug"/>
+				<Option output="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/NetSim.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 NetSim"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 NetSim"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NetSim/fast">
-				<Option output="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/NetSim.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug"/>
+				<Option output="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/NetSim.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 NetSim/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 NetSim/fast"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug"/>
+				<Option working_dir="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug"/>
+				<Option working_dir="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/factory/include/factory.hpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/factory/include/factory.hpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/factory/src/factory.cpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/factory/src/factory.cpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/main.cpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/main.cpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/net_nodes/include/nodes.hpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/net_nodes/include/nodes.hpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/net_nodes/src/nodes.cpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/net_nodes/src/nodes.cpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/semiproducts/include/package.hpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/include/package.hpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/semiproducts/include/storage_types.hpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/include/storage_types.hpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/semiproducts/include/types.hpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/include/types.hpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/semiproducts/src/package.cpp">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/semiproducts/src/package.cpp">
 			<Option target="NetSim"/>
 		</Unit>
-		<Unit filename="C:/Users/lukas/CLionProjects/NetSim/CMakeLists.txt">
+		<Unit filename="C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

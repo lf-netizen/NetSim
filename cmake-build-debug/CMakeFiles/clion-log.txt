@@ -1,16 +1,45 @@
-"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\lukas\CLionProjects\NetSim
--- The C compiler identification is GNU 10.2.0
--- The CXX compiler identification is GNU 10.2.0
+"D:\CLion\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim"
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
 -- Detecting C compiler ABI info
+CMake Warning in C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_04863.dir/
+
+  has 228 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    CMakeCCompilerABI.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/msys64/mingw64/bin/gcc.exe - skipped
+-- Check for working C compiler: D:/MinGW/mingw64/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
+CMake Warning in C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_c3ac4.dir/
+
+  has 228 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    CMakeCXXCompilerABI.cpp.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/msys64/mingw64/bin/g++.exe - skipped
+-- Check for working CXX compiler: D:/MinGW/mingw64/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/lukas/CLionProjects/NetSim/cmake-build-debug
+-- Build files have been written to: C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug
+CMake File API: C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\cmake-build-debug: target-NetSim-Debug-d25f5633a09f4c149d10.json: no CMakeLists.txt file at 'C:\Users\adamf\OneDrive\Pulpit\OneDrive - Akademia GÃ³rniczo-Hutnicza im. StanisÅ‚awa Staszica w Krakowie\_ZPO - Zaawansowane Programowanie Obiektowe\NetSim\NetSim\CMakeLists.txt'

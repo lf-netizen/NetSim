@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "NetSim",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "NetSim::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NetSim-Debug-d25f5633a09f4c149d10.json",
+					"name" : "NetSim",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim/cmake-build-debug",
+		"source" : "C:/Users/adamf/OneDrive/Pulpit/OneDrive - Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie/_ZPO - Zaawansowane Programowanie Obiektowe/NetSim/NetSim"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
