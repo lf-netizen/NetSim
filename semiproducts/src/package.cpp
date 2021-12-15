@@ -3,6 +3,7 @@
 //
 
 // definicje funkcjonalności package.hpp
+
 #include "package.hpp"
 
 

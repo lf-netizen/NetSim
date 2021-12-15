@@ -31,4 +31,4 @@ target_include_directories(NetSim__test PUBLIC
 add_subdirectory(../googletest-master googletest-master)
 target_link_libraries(NetSim__test gmock)
 
-add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)# semiproducts/include/package.hpp semiproducts/include/types.hpp semiproducts/include/storage_types.hpp semiproducts/src/package.cpp factory/include/factory.hpp net_nodes/include/nodes.hpp net_nodes/src/nodes.cpp factory/src/factory.cpp semiproducts/src/storage_types.cpp)
+add_executable(NetSim__debug ${SOURCE_FILES} main.cpp) # semiproducts/include/package.hpp semiproducts/include/types.hpp semiproducts/include/storage_types.hpp semiproducts/src/package.cpp factory/include/factory.hpp net_nodes/include/nodes.hpp net_nodes/src/nodes.cpp factory/src/factory.cpp semiproducts/src/storage_types.cpp)
