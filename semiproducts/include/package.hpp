@@ -11,17 +11,21 @@
 // definicja klasy Package
 class Package {
 public:
-    Package() {}
-    Package(ElementID id): id_(id) {}
-    Package(Package&& other) = default;
+    Package();
+    Package(ElementID id): id_(id) { assigned_IDs_.insert(id); }
+    Package(Package&& other): id_(other.get_id()) {}
+
     Package& operator= (Package&& other);
+
 
     [[nodiscard]] ElementID get_id() const {return id_;}
 
+    ~Package();
+
 private:
     ElementID id_;
-    static std::set<ElementID> assigned_IDs;
-    static std::set<ElementID> freed_IDs;
+    static std::set<ElementID> assigned_IDs_;
+    static std::set<ElementID> freed_IDs_;
 };
 
 
