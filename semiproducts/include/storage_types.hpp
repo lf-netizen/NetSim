@@ -17,23 +17,19 @@ enum PackageQueueType {
 // definicja klasy IPackageStockpile
 class IPackageStockpile {
 public:
-    // alias
     using const_iterator = std::list<Package>::const_iterator;
 
-    void push(Package&& package) { package_queue_.push_back(package); }
-    bool empty() const { return package_queue_.empty(); }
+    virtual void push(Package&& package) = 0;
+    virtual bool empty() const = 0;
 
-    const_iterator cbegin() const { return package_queue_.cbegin(); }
-    const_iterator cend() const { return package_queue_.cend(); }
-    [[nodiscard]] const_iterator begin() const { return package_queue_.cbegin(); }
-    [[nodiscard]] const_iterator end() const { return package_queue_.cend(); }
+    virtual const_iterator cbegin() const = 0;
+    virtual const_iterator cend() const = 0;
+    virtual const_iterator begin() const = 0;
+    virtual const_iterator end() const= 0;
 
-    [[nodiscard]] std::size_t size() const { return package_queue_.size(); }
+    virtual std::size_t size() const = 0;
+
     virtual ~IPackageStockpile() = default;
-
-
-protected:
-    std::list<Package> package_queue_;
 };
 
 // definicja klasy IPackageQueue
@@ -49,12 +45,21 @@ public:
 // definicja klasy PackageQueue
 class PackageQueue : public IPackageQueue {
 public:
-    explicit PackageQueue(PackageQueueType p) : queue_type_(p) {}
+    PackageQueue(PackageQueueType p) : queue_type_(p) {}
     Package pop() override;
 
+    void push(Package&& package) override { package_queue_.push_back(package); }
+    bool empty() const override { return package_queue_.empty(); }
 
+    const_iterator cbegin() const override { return package_queue_.cbegin(); }
+    const_iterator cend() const override{ return package_queue_.cend(); }
+    const_iterator begin() const override { return package_queue_.cbegin(); }
+    const_iterator end() const override { return package_queue_.cend(); }
+
+    std::size_t size() const override { return package_queue_.size(); }
 private:
     PackageQueueType queue_type_;
+    std::list<Package> package_queue_;
 };
 
 
