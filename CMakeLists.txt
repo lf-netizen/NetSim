@@ -17,12 +17,13 @@ set(SOURCE_FILES
         src/storage_types.cpp
         src/nodes.cpp
         src/factory.cpp
+        src/helpers.cpp
         )
 
 add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)
 
 set(SOURCE_FILES_TESTS
-        test/semiproducts_tests.cpp
+        test/mytests.cpp
         test/test_Factory.cpp
         test/test_factory_io.cpp
         test/test_nodes.cpp
@@ -44,4 +45,10 @@ target_include_directories(NetSim__test PUBLIC
 add_subdirectory(../googletest-master googletest-master)
 target_link_libraries(NetSim__test gmock)
 
-
+add_executable(NetSim__mytests ${SOURCE_FILES} test/mytests.cpp test/main_gtest.cpp)
+target_include_directories(NetSim__mytests PUBLIC
+        googletest-master/googlemock/include
+        googletest-master/googletest/include
+        mocks
+        )
+target_link_libraries(NetSim__mytests gmock)

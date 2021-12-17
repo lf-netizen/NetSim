@@ -49,7 +49,7 @@ public:
     Package pop() override;
     PackageQueueType get_queue_type() override { return queue_type_; }
 
-    void push(Package&& package) override { package_queue_.push_back(package); }
+    void push(Package&& package) override { package_queue_.emplace_back(std::move(package)); }
     bool empty() const override { return package_queue_.empty(); }
 
     const_iterator cbegin() const override { return package_queue_.cbegin(); }
