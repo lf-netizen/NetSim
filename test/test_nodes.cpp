@@ -39,7 +39,7 @@ TEST(WorkerTest, HasBuffer) {
 TEST(RampTest, IsDeliveryOnTime) {
 
     Ramp r(1, 2);
-    auto recv = std::make_unique<Storehouse>(1);
+    auto recv = std::make_unique<Storehouse>(1, std::make_unique<PackageQueue>(FIFO));
 
     r.receiver_preferences_.add_receiver(recv.get());
 

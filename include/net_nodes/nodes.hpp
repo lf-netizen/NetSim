@@ -11,6 +11,7 @@
 #include <utility>
 #include "map"
 #include "helpers.hpp"
+#include <optional>
 
 #ifndef NETSIM_NODES_HPP
 #define NETSIM_NODES_HPP
@@ -36,10 +37,10 @@ public:
     ElementID get_id() const override { return id_; }
     void receive_package(Package&& p) override {stockpile_->push(std::move(p)); }
 
-    const_iterator cbegin() const override {return stockpile_ -> cbegin(); }
-    const_iterator cend() const override {return stockpile_ -> cend(); }
-    const_iterator begin() const override {return stockpile_ -> begin(); }
-    const_iterator end() const override {return stockpile_ -> end(); }
+    const_iterator cbegin() const override {return stockpile_->cbegin(); }
+    const_iterator cend() const override {return stockpile_->cend(); }
+    const_iterator begin() const override {return stockpile_->begin(); }
+    const_iterator end() const override {return stockpile_->end(); }
 
 private:
     ElementID id_;
@@ -73,7 +74,61 @@ private:
 
 };
 
+class PackageSender {
+public:
 
+    PackageSender(): buffer_(std::nullopt) {}
+    ReceiverPreferences receiver_preferences_ = ReceiverPreferences();
+
+    PackageSender(PackageSender&& other) = default;
+
+    void send_package();
+
+    const std::optional<Package>& get_sending_buffer() const { return buffer_; }
+
+protected:
+    std::optional<Package> buffer_;
+    void push_package(Package&& p) {buffer_ = p; }
+
+};
+
+class Ramp : public PackageSender {
+public:
+    Ramp(ElementID id, TimeOffset di) : PackageSender(), id_(id), di_(di) {}
+
+    ElementID get_id() const { return id_; }
+    TimeOffset get_delivery_interval() const { return di_; }
+
+    void deliver_goods(Time t);
+
+private:
+    ElementID id_;
+    TimeOffset di_;
+};
+
+class Worker : public PackageSender, public IPackageReceiver {
+public:
+    Worker(ElementID id, TimeOffset pd, std::unique_ptr<IPackageQueue> q) : PackageSender(), id_(id), pd_(pd), queue_(std::move(q)) {}
+
+    void do_work(Time t);
+
+    TimeOffset get_processing_duration() const { return pd_; }
+    Time get_package_processing_start_time() const {return pst_; }
+
+    const_iterator cbegin() const override { return queue_->cbegin(); }
+    const_iterator cend() const override { return queue_->cend(); }
+    const_iterator begin() const override { return queue_->begin(); }
+    const_iterator end() const override{ return queue_->end(); }
+
+    ElementID get_id() const override { return id_; }
+    void receive_package (Package&& p) override { queue_->push(std::move(p)); }
+
+private:
+    ElementID id_;
+    TimeOffset pd_;
+    TimeOffset pst_ = 0;
+    std::unique_ptr<IPackageQueue> queue_;
+};
 
 
 

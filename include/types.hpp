@@ -8,5 +8,10 @@
 // definicja ElementID
 
 using ElementID = std::size_t;
+
 using ProbabilityGenerator = std::function<double()>;
+
+using Time = std::size_t;
+using TimeOffset = std::size_t;
+
 #endif //NETSIM_TYPES_HPP

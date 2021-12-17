@@ -32,3 +32,26 @@ void ReceiverPreferences::remove_receiver(IPackageReceiver *r) {
 }
 
 
+void PackageSender::send_package() {
+    if (buffer_) {
+        receiver_preferences_.choose_receiver() ->receive_package(std::move(buffer_.value()));
+        buffer_ = std::nullopt;
+    }
+}
+
+void Ramp::deliver_goods(Time t) {
+    if((t - 1) % di_ == 0) {
+        buffer_ = Package();
+    }
+}
+
+void Worker::do_work(Time t) {
+    if (t - pst_ == pd_) {
+        send_package();
+    }
+    if (buffer_ == std::nullopt) {
+        pst_ = t;
+        push_package(queue_->pop());
+    }
+
+}
