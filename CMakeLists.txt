@@ -5,22 +5,35 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_compile_options(-Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion)
 
-include_directories(semiproducts/include
-                    net_nodes/include
-                    factory/include)
+include_directories(include
+                    include/factory
+                    include/net_nodes
+                    include/reports
+                    include/semiproducts
+                    include/simulation)
 
 set(SOURCE_FILES
-        semiproducts/src/package.cpp
-        semiproducts/src/storage_types.cpp
-        net_nodes/src/nodes.cpp
-        factory/src/factory.cpp
+        src/package.cpp
+        src/storage_types.cpp
+        src/nodes.cpp
+        src/factory.cpp
         )
+
+add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)
+
 set(SOURCE_FILES_TESTS
         test/semiproducts_tests.cpp
-        )
+        test/test_Factory.cpp
+        test/test_factory_io.cpp
+        test/test_nodes.cpp
+        test/test_package.cpp
+        test/test_reports.cpp
+        test/test_simulate.cpp
+        test/test_storage_types.cpp)
 
-add_executable(NetSim__test ${SOURCE_FILES} ${SOURCE_FILES_TESTS} test/main_gtest.cpp)
 
+add_executable(NetSim__test ${SOURCE_FILES} test/test_package.cpp test/test_storage_types.cpp test/main_gtest.cpp)
+#target_compile_definitions(NetSim__test PUBLIC EXERCISE_ID=EXERCISE_ID_PACKAGES)
 
 target_include_directories(NetSim__test PUBLIC
         googletest-master/googlemock/include
@@ -31,4 +44,4 @@ target_include_directories(NetSim__test PUBLIC
 add_subdirectory(../googletest-master googletest-master)
 target_link_libraries(NetSim__test gmock)
 
-add_executable(NetSim__debug ${SOURCE_FILES} main.cpp) # semiproducts/include/package.hpp semiproducts/include/types.hpp semiproducts/include/storage_types.hpp semiproducts/src/package.cpp factory/include/factory.hpp net_nodes/include/nodes.hpp net_nodes/src/nodes.cpp factory/src/factory.cpp semiproducts/src/storage_types.cpp)
+

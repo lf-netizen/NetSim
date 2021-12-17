@@ -47,6 +47,7 @@ class PackageQueue : public IPackageQueue {
 public:
     PackageQueue(PackageQueueType p) : queue_type_(p) {}
     Package pop() override;
+    PackageQueueType get_queue_type() override { return queue_type_; }
 
     void push(Package&& package) override { package_queue_.push_back(package); }
     bool empty() const override { return package_queue_.empty(); }

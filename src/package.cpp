@@ -31,8 +31,8 @@ Package::~Package() {
 }
 
 Package::Package(ElementID id) {
-    if (assigned_IDs_.find(id) == assigned_IDs_.end()) {
-        throw std::invalid_argument("ID is assigned");
+    if (assigned_IDs_.find(id) != assigned_IDs_.end()) {
+        throw std::invalid_argument("This ID is assigned");
     }
     id_ =id;
     assigned_IDs_.insert(id);
