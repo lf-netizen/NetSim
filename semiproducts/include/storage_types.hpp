@@ -6,6 +6,13 @@
 #define NETSIM_STORAGE_TYPES_HPP
 
 #include <list>
+#include "package.hpp"
+
+// definicja typu wyliczeniowego PackageQueueType
+enum PackageQueueType {
+    FIFO,
+    LIFO
+};
 
 // definicja klasy IPackageStockpile
 class IPackageStockpile {
@@ -13,50 +20,43 @@ public:
     // alias
     using const_iterator = std::list<Package>::const_iterator;
 
-    void push(Package&&);
-    bool empty();
+    void push(Package&& package) { package_queue_.push_back(package); }
+    bool empty() const { return package_queue_.empty(); }
 
-    typename std::vector<T>::const_iterator cbegin() const { return v_.cbegin(); }
-    typename std::vector<T>::const_iterator cend() const { return v_.cend(); }
-    typename std::vector<T>::iterator begin() { return v_.begin(); }
-    typename std::vector<T>::const_iterator begin() const { return v_.cbegin(); }
-    typename std::vector<T>::iterator end() { return v_.end(); }
-    typename std::vector<T>::const_iterator end() const { return v_.cend(); }
+    const_iterator cbegin() const { return package_queue_.cbegin(); }
+    const_iterator cend() const { return package_queue_.cend(); }
+    [[nodiscard]] const_iterator begin() const { return package_queue_.cbegin(); }
+    [[nodiscard]] const_iterator end() const { return package_queue_.cend(); }
 
-    size_type size();
-    /iteratory/;
-    ~IPackageStockpile();
+    [[nodiscard]] std::size_t size() const { return package_queue_.size(); }
+    virtual ~IPackageStockpile() = default;
 
 
-private:
-
+protected:
+    std::list<Package> package_queue_;
 };
 
 // definicja klasy IPackageQueue
 class IPackageQueue : public IPackageStockpile {
 public:
-    Package pop();
-    PackageQueueType get_queue_type();
-
-private:
+    virtual Package pop() = 0;
+    virtual PackageQueueType get_queue_type() = 0;
 
 };
+
+
 
 // definicja klasy PackageQueue
 class PackageQueue : public IPackageQueue {
 public:
-    PackageQueue(PackageQueueType p = {}) : package_(p) {}
-    Package pop();
-    void push(Package&&);
+    explicit PackageQueue(PackageQueueType p) : queue_type_(p) {}
+    Package pop() override;
 
 
 private:
-    std::list queue_;
+    PackageQueueType queue_type_;
 };
 
-// definicja typu wyliczeniowego PackageQueueType
-enum PackageQueueType {
 
-};
 
 #endif //NETSIM_STORAGE_TYPES_HPP

@@ -12,13 +12,15 @@
 class Package {
 public:
     Package();
-    Package(ElementID id): id_(id);
-    Package(Package&& other): id_(other.get_id()) {}
+    Package(ElementID id);
+    Package(const Package&& other) : id_(other.get_id()) {}
+    Package(const Package& other) : id_(other.get_id()) {}
+
 
     Package& operator= (Package&& other);
 
 
-    [[nodiscard]] ElementID get_id() const {return id_;}
+    ElementID get_id() const { return id_; }
 
     ~Package();
 
