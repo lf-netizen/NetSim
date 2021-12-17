@@ -12,7 +12,7 @@
 class Package {
 public:
     Package();
-    Package(ElementID id): id_(id) { assigned_IDs_.insert(id); }
+    Package(ElementID id): id_(id);
     Package(Package&& other): id_(other.get_id()) {}
 
     Package& operator= (Package&& other);
