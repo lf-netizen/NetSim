@@ -88,7 +88,7 @@ public:
 
 protected:
     std::optional<Package> buffer_;
-    void push_package(Package&& p) {buffer_ = p; }
+    void push_package(Package&& p) {buffer_ = std::move(p); }
 
 };
 

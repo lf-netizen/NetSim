@@ -13,8 +13,8 @@ class Package {
 public:
     Package();
     Package(ElementID id);
-    Package(const Package&& other) : id_(other.get_id()) {}
-    Package(const Package& other) : id_(other.get_id()) {}
+    Package(Package&& other) : id_(other.id_) { copied_ = true; }
+    //Package(Package& other) : id_(other.get_id()) { std::cout << "Package&" << std::endl; }
 
 
     Package& operator= (Package&& other);
@@ -28,6 +28,7 @@ private:
     ElementID id_;
     static std::set<ElementID> assigned_IDs_;
     static std::set<ElementID> freed_IDs_;
+    static bool copied_;
 };
 
 

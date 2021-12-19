@@ -34,7 +34,7 @@ void ReceiverPreferences::remove_receiver(IPackageReceiver *r) {
 
 void PackageSender::send_package() {
     if (buffer_) {
-        receiver_preferences_.choose_receiver() ->receive_package(std::move(buffer_.value()));
+        receiver_preferences_.choose_receiver()->receive_package(std::move(buffer_.value()));
         buffer_ = std::nullopt;
     }
 }

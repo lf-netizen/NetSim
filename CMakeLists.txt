@@ -33,17 +33,17 @@ set(SOURCE_FILES_TESTS
         test/test_storage_types.cpp)
 
 
-add_executable(NetSim__test ${SOURCE_FILES} test/test_package.cpp test/test_storage_types.cpp test/main_gtest.cpp)
-#target_compile_definitions(NetSim__test PUBLIC EXERCISE_ID=EXERCISE_ID_PACKAGES)
+add_executable(NetSim__semiproducts ${SOURCE_FILES} test/test_package.cpp test/test_storage_types.cpp test/main_gtest.cpp)
+#target_compile_definitions(NetSim__semiproducts PUBLIC EXERCISE_ID=EXERCISE_ID_PACKAGES)
 
-target_include_directories(NetSim__test PUBLIC
+target_include_directories(NetSim__semiproducts PUBLIC
         googletest-master/googlemock/include
         googletest-master/googletest/include
         mocks
         )
 
 add_subdirectory(../googletest-master googletest-master)
-target_link_libraries(NetSim__test gmock)
+target_link_libraries(NetSim__semiproducts gmock)
 
 add_executable(NetSim__mytests ${SOURCE_FILES} test/mytests.cpp test/main_gtest.cpp)
 target_include_directories(NetSim__mytests PUBLIC

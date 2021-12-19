@@ -28,27 +28,40 @@ TEST(PackageTest, IDfromFreed) {
     ASSERT_EQ(p3.get_id(), 1);
 }
 
-TEST(ReceiverPreferencesTest, ProbabilitiesTest) {
+//TEST(ReceiverPreferencesTest, ProbabilitiesTest) {
+//
+//    PackageQueue pq(FIFO);
+//    PackageQueue pq2(FIFO);
+//
+//    Storehouse p1(1, std::make_unique<IPackageStockpile>(pq));
+//    Storehouse p2(2, std::make_unique<PackageQueue>(pq));
+//    Storehouse p3(3, std::make_unique<PackageQueue>(pq));
+//
+//    ReceiverPreferences rp = ReceiverPreferences();
+//    rp.add_receiver(&p1);
+//    rp.add_receiver(&p2);
+//    rp.add_receiver(&p3);
+//
+//    ReceiverPreferences::preferences_t p = rp.get_preferences();
+//    ASSERT_EQ(p[&p1], 1.0/3.0);
+//    rp.remove_receiver(&p2);
+//
+//    p = rp.get_preferences();
+//    ASSERT_EQ(p[&p1], 0.5);
+//
+//}
 
+TEST(RampTest, DeliverGoods) {
+
+    Ramp r(1, 2);
     PackageQueue pq(FIFO);
-    PackageQueue pq2(FIFO);
+    Worker w(1, 10, std::make_unique<PackageQueue>(PackageQueueType::FIFO));
 
-    Storehouse p1(1, std::make_unique<PackageQueue>(pq));
-    Storehouse p2(2, std::make_unique<PackageQueue>(pq));
-    Storehouse p3(3, std::make_unique<PackageQueue>(pq));
+    r.receiver_preferences_.add_receiver(&w);
 
-    ReceiverPreferences rp = ReceiverPreferences();
-    rp.add_receiver(&p1);
-    rp.add_receiver(&p2);
-    rp.add_receiver(&p3);
-
-    ReceiverPreferences::preferences_t p = rp.get_preferences();
-    ASSERT_EQ(p[&p1], 1.0/3.0);
-    rp.remove_receiver(&p2);
-
-    p = rp.get_preferences();
-    ASSERT_EQ(p[&p1], 0.5);
-
-
-
+    for(std::size_t t = 1; t< 12; t++) {
+        r.deliver_goods(t);
+        r.send_package();
+    }
+    ASSERT_TRUE(1);
 }
