@@ -77,18 +77,18 @@ private:
 class PackageSender {
 public:
 
-    PackageSender(): buffer_(std::nullopt) {}
+    PackageSender(): to_send_buffer_(std::nullopt) {}
     ReceiverPreferences receiver_preferences_ = ReceiverPreferences();
 
     PackageSender(PackageSender&& other) = default;
 
     void send_package();
 
-    const std::optional<Package>& get_sending_buffer() const { return buffer_; }
+    const std::optional<Package>& get_sending_buffer() const { return to_send_buffer_; }
 
 protected:
-    std::optional<Package> buffer_;
-    void push_package(Package&& p) {buffer_ = std::move(p); }
+    std::optional<Package> to_send_buffer_;
+    void push_package(Package&& p) {to_send_buffer_ = std::move(p); }
 
 };
 
@@ -108,7 +108,8 @@ private:
 
 class Worker : public PackageSender, public IPackageReceiver {
 public:
-    Worker(ElementID id, TimeOffset pd, std::unique_ptr<IPackageQueue> q) : PackageSender(), id_(id), pd_(pd), queue_(std::move(q)) {}
+    Worker(ElementID id, TimeOffset pd, std::unique_ptr<IPackageQueue> q) : PackageSender(), id_(id), pd_(pd),
+                                                                            queue_(std::move(q)), work_buffer_(std::nullopt) {}
 
     void do_work(Time t);
 
@@ -128,6 +129,7 @@ private:
     TimeOffset pd_;
     TimeOffset pst_ = 0;
     std::unique_ptr<IPackageQueue> queue_;
+    std::optional<Package> work_buffer_;
 };
 
 
