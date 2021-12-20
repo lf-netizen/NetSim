@@ -22,20 +22,23 @@ Package::Package() {
 }
 
 Package &Package::operator=(Package &&other) {
+    assigned_IDs_.erase(id_);
+    freed_IDs_.insert(id_);
+    copied_ = true;
     id_ = other.id_;
     return *this;
 }
 
 Package::~Package() {
-//    if (not copied_) {
-//        assigned_IDs_.erase(id_);
-//        freed_IDs_.insert(id_);
-//    }
-//    else {
-//        copied_ = false;
-//    }
+    if (not copied_) {
         assigned_IDs_.erase(id_);
         freed_IDs_.insert(id_);
+    }
+    else {
+        copied_ = false;
+    }
+//        assigned_IDs_.erase(id_);
+//        freed_IDs_.insert(id_);
 }
 
 Package::Package(ElementID id) {

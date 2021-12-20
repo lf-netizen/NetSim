@@ -59,7 +59,7 @@ TEST(RampTest, DeliverGoods) {
 
     r.receiver_preferences_.add_receiver(&w);
 
-    for(std::size_t t = 1; t< 12; t++) {
+    for(std::size_t t = 1; t < 10; t++) {
         r.deliver_goods(t);
         r.send_package();
     }
