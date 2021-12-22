@@ -32,4 +32,3 @@ Package PackageQueue::pop() {
 //void PackageQueue::push(Package&&) {
 //
 //}
-

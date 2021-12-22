@@ -16,6 +16,13 @@
 #ifndef NETSIM_NODES_HPP
 #define NETSIM_NODES_HPP
 
+
+// typ wyliczeniowy do IPackageReceiver
+enum class ReceiverType {
+    WORKER,
+    STOREHOUSE
+};
+
 class IPackageReceiver {
 public:
     virtual void receive_package (Package&& p) = 0;
@@ -26,6 +33,8 @@ public:
     virtual const_iterator cend() const = 0;
     virtual const_iterator begin() const = 0;
     virtual const_iterator end() const= 0;
+
+    virtual ReceiverType get_receiver_type() const = 0;
 
     virtual ~IPackageReceiver() = default;
 };
@@ -42,13 +51,15 @@ public:
     const_iterator begin() const override {return stockpile_->begin(); }
     const_iterator end() const override {return stockpile_->end(); }
 
+    ReceiverType get_receiver_type() const override { return ReceiverType::STOREHOUSE; }
+
 private:
     ElementID id_;
     std::unique_ptr<IPackageStockpile> stockpile_;
 };
 
 
-class  ReceiverPreferences {
+class ReceiverPreferences {
 public:
 
     using preferences_t = std::map<IPackageReceiver*, double>;
@@ -114,7 +125,7 @@ public:
     void do_work(Time t);
 
     TimeOffset get_processing_duration() const { return pd_; }
-    Time get_package_processing_start_time() const {return pst_; }
+    Time get_package_processing_start_time() const { return pst_; }
 
     const_iterator cbegin() const override { return queue_->cbegin(); }
     const_iterator cend() const override { return queue_->cend(); }
@@ -123,6 +134,9 @@ public:
 
     ElementID get_id() const override { return id_; }
     void receive_package (Package&& p) override { queue_->push(std::move(p)); }
+
+    ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
+
 
 private:
     ElementID id_;
