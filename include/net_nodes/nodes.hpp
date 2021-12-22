@@ -65,7 +65,7 @@ public:
     using preferences_t = std::map<IPackageReceiver*, double>;
     using const_iterator = preferences_t::const_iterator;
 
-    ReceiverPreferences(ProbabilityGenerator pg = default_probability_generator) : pg(std::move(pg)) {}
+    ReceiverPreferences(ProbabilityGenerator pg = probability_generator) : pg(std::move(pg)) {}
 
     ProbabilityGenerator pg;
     preferences_t preferences;
