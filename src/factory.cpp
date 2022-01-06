@@ -17,11 +17,14 @@ enum class NodeColor {
 template <typename Node>
 void Factory::remove_receiver(NodeCollection<Node>& collection, ElementID id) {
 
+    typename NodeCollection<Node>::iterator it = collection.find_by_id(id);
+
+
     for(auto& ramp : ramps_) {
-        ramp.receiver_preferences_.remove_receiver(&collection.find_by_id(id));
+        ramp.receiver_preferences_.remove_receiver(&(*it));
     }
     for(auto& worker : workers_) {
-        worker.receiver_preferences_.remove_receiver(&collection.find_by_id(id));
+        worker.receiver_preferences_.remove_receiver(&(*it));
     }
 
     collection.remove_by_id(id);
@@ -36,10 +39,10 @@ void NodeCollection<Node>::add(Node&& node) {
 
 template <class Node>
 void NodeCollection<Node>::remove_by_id(ElementID id) {
-    const_iterator node_to_remove = find_by_id(id);
+    iterator node_to_remove = find_by_id(id);
 
-    if(node_to_remove) {
-        v_.template erase(node_to_remove);
+    if(node_to_remove != v_.end()) {
+        v_.erase(node_to_remove);
     }
 }
 

@@ -25,8 +25,8 @@ public:
     void remove_by_id(ElementID id);
 
 
-    iterator find_by_id(ElementID id) { return std::find_if(v_.begin(), v_.end(), [&id](Node& node) { return id == node.get_id(); } ); }
-    const_iterator find_by_id(ElementID id) const { return std::find_if(v_.cbegin(), v_.cend(), [&id](Node& node) { return id == node.get_id(); } ); }
+    iterator find_by_id(ElementID id) { return std::find_if(v_.begin(), v_.end(), [id](Node& node) { return id == node.get_id(); } ); }
+    const_iterator find_by_id(ElementID id) const { return std::find_if(v_.cbegin(), v_.cend(), [id](const Node& node) { return id == node.get_id(); } ); }
 
     const_iterator cbegin() const { return v_.cbegin(); }
     const_iterator cend() const { return v_.cend(); }
@@ -44,7 +44,7 @@ private:
 class Factory {
 public:
     void add_ramp(Ramp&& ramp) { ramps_.add(std::move(ramp)); }
-    void remove_ramp(ElementID id) { remove_receiver(ramps_, id); }
+    void remove_ramp(ElementID id) { ramps_.remove_by_id(id); }
     NodeCollection<Ramp>::iterator find_ramp_by_id(ElementID id) { return ramps_.find_by_id(id); }
     NodeCollection<Ramp>::const_iterator find_ramp_by_id(ElementID id) const { return ramps_.find_by_id(id); }
     NodeCollection<Ramp>::const_iterator ramp_cbegin() const { return ramps_.cbegin(); }
