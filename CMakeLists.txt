@@ -6,11 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 #add_compile_options(-Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion)
 
 include_directories(include
-                    include/factory
-                    include/net_nodes
-                    include/reports
-                    include/semiproducts
-                    include/simulation)
+        include/factory
+        include/net_nodes
+        include/reports
+        include/semiproducts
+        include/simulation)
 
 set(SOURCE_FILES
         src/package.cpp
@@ -71,4 +71,3 @@ target_include_directories(NetSim__factory PUBLIC
         mocks
         )
 target_link_libraries(NetSim__factory gmock)
-
