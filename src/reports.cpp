@@ -36,5 +36,7 @@ void gener_net_structure_report(const Factory& factory, std::ostringstream& os){
     }
     os << std::endl;
 
+
+
 }
 
