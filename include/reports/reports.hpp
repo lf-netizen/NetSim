@@ -6,5 +6,16 @@
 
 #ifndef NETSIM_REPORTS_HPP
 #define NETSIM_REPORTS_HPP
+#include<sstream>
+
+void gener_net_structure_report(const Factory& factory, std::ostringstream& os);
+void gener_simul_state_report(const Factory& factory, std::ostringstream& os, Time t);
+
+
+
+
+
+
+
 
 #endif //NETSIM_REPORTS_HPP

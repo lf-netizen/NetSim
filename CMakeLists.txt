@@ -18,6 +18,7 @@ set(SOURCE_FILES
         src/nodes.cpp
         src/factory.cpp
         src/helpers.cpp
+        src/reports.cpp
         )
 
 add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)

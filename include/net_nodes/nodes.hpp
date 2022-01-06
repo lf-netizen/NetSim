@@ -41,15 +41,15 @@ public:
 
 class Storehouse : public IPackageReceiver {
 public:
-    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> p) : id_(id) { stockpile_ = std::move(p); }
+    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> p = PackageQueue(PackageQueueType::FIFO)) : id_(id) { stockpile_ = std::move(p); }
 
     ElementID get_id() const override { return id_; }
-    void receive_package(Package&& p) override {stockpile_->push(std::move(p)); }
+    void receive_package(Package&& p) override { stockpile_->push(std::move(p)); }
 
-    const_iterator cbegin() const override {return stockpile_->cbegin(); }
-    const_iterator cend() const override {return stockpile_->cend(); }
-    const_iterator begin() const override {return stockpile_->begin(); }
-    const_iterator end() const override {return stockpile_->end(); }
+    const_iterator cbegin() const override { return stockpile_->cbegin(); }
+    const_iterator cend() const override { return stockpile_->cend(); }
+    const_iterator begin() const override { return stockpile_->begin(); }
+    const_iterator end() const override { return stockpile_->end(); }
 
     ReceiverType get_receiver_type() const override { return ReceiverType::STOREHOUSE; }
 
