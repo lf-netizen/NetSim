@@ -8,8 +8,8 @@
 #define NETSIM_REPORTS_HPP
 #include<sstream>
 
-void gener_net_structure_report(const Factory& factory, std::ostringstream& os);
-void gener_simul_state_report(const Factory& factory, std::ostringstream& os, Time t);
+//void gener_net_structure_report(const Factory& factory, std::ostringstream& os);
+//void gener_simul_state_report(const Factory& factory, std::ostringstream& os, Time t);
 
 
 
