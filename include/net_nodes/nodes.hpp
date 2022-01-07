@@ -41,7 +41,7 @@ public:
 
 class Storehouse : public IPackageReceiver {
 public:
-    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> p = PackageQueue(PackageQueueType::FIFO)) : id_(id) { stockpile_ = std::move(p); }
+    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> p = std::make_unique<PackageQueue>(PackageQueue(FIFO))) : id_(id) { stockpile_ = std::move(p); }
 
     ElementID get_id() const override { return id_; }
     void receive_package(Package&& p) override { stockpile_->push(std::move(p)); }
@@ -112,6 +112,9 @@ public:
 
     void deliver_goods(Time t);
 
+    Ramp& operator=(Ramp&& other);
+    Ramp(Ramp&& other);
+
 private:
     ElementID id_;
     TimeOffset di_;
@@ -123,6 +126,9 @@ public:
                                                                             queue_(std::move(q)), work_buffer_(std::nullopt) {}
 
     void do_work(Time t);
+
+    Worker(Worker&& other);
+    Worker& operator=(Worker&& other);
 
     TimeOffset get_processing_duration() const { return pd_; }
     Time get_package_processing_start_time() const { return pst_; }

@@ -21,8 +21,8 @@ public:
     using const_iterator = typename container_t::const_iterator;
 
 
-    void add(Node&& node);
-    void remove_by_id(ElementID id);
+    void add(Node&& node) { v_.template emplace_back(std::move(node)); }
+    void remove_by_id(ElementID id) { v_.erase(find_by_id(id)); }
 
 
     iterator find_by_id(ElementID id) { return std::find_if(v_.begin(), v_.end(), [id](Node& node) { return id == node.get_id(); } ); }
@@ -84,7 +84,17 @@ public:
 
 private:
     template <typename Node>
-    void remove_receiver(NodeCollection<Node>& collection, ElementID id);
+    void remove_receiver(NodeCollection<Node>& collection, ElementID id) {    typename NodeCollection<Node>::iterator it = collection.find_by_id(id);
+
+
+        for(auto& ramp : ramps_) {
+            ramp.receiver_preferences_.remove_receiver(&(*it));
+        }
+        for(auto& worker : workers_) {
+            worker.receiver_preferences_.remove_receiver(&(*it));
+        }
+
+        collection.remove_by_id(id); }
 
     NodeCollection<Ramp> ramps_;
     NodeCollection<Worker> workers_;

@@ -45,6 +45,19 @@ void Ramp::deliver_goods(Time t) {
     }
 }
 
+Ramp &Ramp::operator=(Ramp &&other) {
+    id_ = other.get_id();
+    di_ = other.get_delivery_interval();
+    to_send_buffer_ = std::move(other.to_send_buffer_);
+    return *this;
+}
+
+Ramp::Ramp(Ramp &&other) {
+    id_ = other.get_id();
+    di_ = other.get_delivery_interval();
+    to_send_buffer_ = std::move(other.to_send_buffer_);
+}
+
 void Worker::do_work(Time t) {
     if (work_buffer_ == std::nullopt && !queue_->empty()) {
         pst_ = t;
@@ -56,4 +69,24 @@ void Worker::do_work(Time t) {
     }
 
 
+}
+
+Worker::Worker(Worker &&other) {
+    id_ = other.get_id();
+    pd_ = other.get_processing_duration();
+    pst_ = other.get_package_processing_start_time();
+    queue_ = std::move(other.queue_);
+    work_buffer_ = std::move(other.work_buffer_);
+    to_send_buffer_ = std::move(other.to_send_buffer_);
+
+}
+
+Worker &Worker::operator=(Worker &&other) {
+    id_ = other.get_id();
+    pd_ = other.get_processing_duration();
+    pst_ = other.get_package_processing_start_time();
+    queue_ = std::move(other.queue_);
+    work_buffer_ = std::move(other.work_buffer_);
+    to_send_buffer_ = std::move(other.to_send_buffer_);
+    return *this;
 }

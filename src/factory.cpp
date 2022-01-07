@@ -13,38 +13,38 @@ enum class NodeColor {
     VISITED,
     VERIFIED
 };
-
-template <typename Node>
-void Factory::remove_receiver(NodeCollection<Node>& collection, ElementID id) {
-
-    typename NodeCollection<Node>::iterator it = collection.find_by_id(id);
-
-
-    for(auto& ramp : ramps_) {
-        ramp.receiver_preferences_.remove_receiver(&(*it));
-    }
-    for(auto& worker : workers_) {
-        worker.receiver_preferences_.remove_receiver(&(*it));
-    }
-
-    collection.remove_by_id(id);
-}
-
-
-template <class Node>
-void NodeCollection<Node>::add(Node&& node) {
-    v_.template emplace_back(std::move(node));
-}
-
-
-template <class Node>
-void NodeCollection<Node>::remove_by_id(ElementID id) {
-    iterator node_to_remove = find_by_id(id);
-
-    if(node_to_remove != v_.end()) {
-        v_.erase(node_to_remove);
-    }
-}
+//
+//template <typename Node>
+//void Factory::remove_receiver(NodeCollection<Node>& collection, ElementID id) {
+//
+//    typename NodeCollection<Node>::iterator it = collection.find_by_id(id);
+//
+//
+//    for(auto& ramp : ramps_) {
+//        ramp.receiver_preferences_.remove_receiver(&(*it));
+//    }
+//    for(auto& worker : workers_) {
+//        worker.receiver_preferences_.remove_receiver(&(*it));
+//    }
+//
+//    collection.remove_by_id(id);
+//}
+//
+//
+//template <class Node>
+//void NodeCollection<Node>::add(Node&& node) {
+//    v_.template emplace_back(std::move(node));
+//}
+//
+//
+//template <class Node>
+//void NodeCollection<Node>::remove_by_id(ElementID id) {
+//    iterator node_to_remove = find_by_id(id);
+//
+//    if(node_to_remove != v_.end()) {
+//        v_.erase(node_to_remove);
+//    }
+//}
 
 
 bool has_reachable_storehouse(const PackageSender* sender, std::map<const PackageSender*, NodeColor>& node_colors) {
@@ -111,7 +111,10 @@ bool Factory::is_consistent() const {
     }
 
     for(auto &ramp : ramps_) {
-        if(not has_reachable_storehouse(&ramp, node_colors)) {
+        try {
+            has_reachable_storehouse(&ramp, node_colors);
+        }
+        catch (std::logic_error) {
             return false;
         }
     }

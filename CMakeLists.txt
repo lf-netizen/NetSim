@@ -18,7 +18,7 @@ set(SOURCE_FILES
         src/nodes.cpp
         src/factory.cpp
         src/helpers.cpp
-        src/reports.cpp
+        #src/reports.cpp
         )
 
 add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)
@@ -55,7 +55,7 @@ target_include_directories(NetSim__mytests PUBLIC
 target_link_libraries(NetSim__mytests gmock)
 
 add_executable(NetSim__nodes ${SOURCE_FILES} test/test_nodes.cpp test/main_gtest.cpp)
-target_compile_definitions(NetSim__nodes PUBLIC EXERCISE_ID=EXERCISE_ID_NODES)
+target_compile_definitions(NetSim__nodes PUBLIC EXERCISE_ID=EXERCISE_ID_FACTORY)
 target_include_directories(NetSim__nodes PUBLIC
         googletest-master/googlemock/include
         googletest-master/googletest/include
