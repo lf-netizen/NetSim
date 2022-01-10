@@ -114,7 +114,7 @@ bool Factory::is_consistent() const {
         try {
             has_reachable_storehouse(&ramp, node_colors);
         }
-        catch (std::logic_error) {
+        catch (std::logic_error const&) {
             return false;
         }
     }

@@ -16,13 +16,13 @@
 template <class Node>
 class NodeCollection {
 public:
-    using container_t = typename std::vector<Node>;
+    using container_t = typename std::list<Node>;
     using iterator = typename container_t::iterator;
     using const_iterator = typename container_t::const_iterator;
 
 
     void add(Node&& node) { v_.template emplace_back(std::move(node)); }
-    void remove_by_id(ElementID id) { v_.erase(find_by_id(id)); }
+    void remove_by_id(ElementID id) { if(find_by_id(id) != v_.end()) v_.erase(find_by_id(id)); }
 
 
     iterator find_by_id(ElementID id) { return std::find_if(v_.begin(), v_.end(), [id](Node& node) { return id == node.get_id(); } ); }
