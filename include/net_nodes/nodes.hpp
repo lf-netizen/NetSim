@@ -142,7 +142,8 @@ public:
     void receive_package (Package&& p) override { queue_->push(std::move(p)); }
 
     ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
-
+    const std::optional<Package>& get_processing_buffer() const { return work_buffer_;}
+    PackageQueueType get_worker_queue_type() const { return queue_->get_queue_type();}
 
 private:
     ElementID id_;

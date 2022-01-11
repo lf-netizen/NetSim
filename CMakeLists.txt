@@ -18,7 +18,7 @@ set(SOURCE_FILES
         src/nodes.cpp
         src/factory.cpp
         src/helpers.cpp
-        #src/reports.cpp
+        src/reports.cpp
         )
 
 add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)
@@ -36,13 +36,11 @@ set(SOURCE_FILES_TESTS
 
 add_executable(NetSim__semiproducts ${SOURCE_FILES} test/test_package.cpp test/test_storage_types.cpp test/main_gtest.cpp)
 #target_compile_definitions(NetSim__semiproducts PUBLIC EXERCISE_ID=EXERCISE_ID_PACKAGES)
-
 target_include_directories(NetSim__semiproducts PUBLIC
         googletest-master/googlemock/include
         googletest-master/googletest/include
         mocks
         )
-
 add_subdirectory(../googletest-master googletest-master)
 target_link_libraries(NetSim__semiproducts gmock)
 
@@ -62,6 +60,15 @@ target_include_directories(NetSim__nodes PUBLIC
         mocks
         )
 target_link_libraries(NetSim__nodes gmock)
+
+add_executable(NetSim__reports ${SOURCE_FILES} test/test_reports.cpp test/main_gtest.cpp)
+#target_compile_definitions(NetSim__reports PUBLIC EXERCISE_ID=EXERCISE_ID_FACTORY)
+target_include_directories(NetSim__reports PUBLIC
+        googletest-master/googlemock/include
+        googletest-master/googletest/include
+        mocks
+        )
+target_link_libraries(NetSim__reports gmock)
 
 add_executable(NetSim__factory ${SOURCE_FILES} test/test_Factory.cpp test/main_gtest.cpp)
 target_compile_definitions(NetSim__factory PUBLIC EXERCISE_ID=EXERCISE_ID_FACTORY)

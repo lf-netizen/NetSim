@@ -6,6 +6,7 @@
 
 #include <functional>
 
+
 using ::testing::ContainerEq;
 
 void perform_report_check(std::function<void(std::ostringstream&)>& reporting_function,

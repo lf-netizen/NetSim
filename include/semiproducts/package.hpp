@@ -17,7 +17,7 @@ public:
     //Package(Package& other) : id_(other.get_id()) { std::cout << "Package&" << std::endl; }
 
 
-    Package& operator= (Package&& other);
+    Package& operator = (Package&& other);
 
 
     ElementID get_id() const { return id_; }
