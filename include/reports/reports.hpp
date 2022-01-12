@@ -13,9 +13,11 @@ void generate_structure_report(const Factory& factory, std::ostream& oss);
 void generate_simulation_turn_report(const Factory& factory, std::ostream& oss, Time t);
 
 
-void gener_receivers(const Factory& factory, std::ostringstream& os);
+//void gener_receivers(const Factory& factory, std::ostringstream& os);
 
-
+//void sort(std::map<IPackageReceiver *, double> M);
+//bool cmp(std::pair<IPackageReceiver *, double>& a,
+//         std::pair<IPackageReceiver *, double>& b);
 
 
 
