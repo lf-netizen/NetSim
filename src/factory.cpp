@@ -148,3 +148,55 @@ void Factory::do_work(Time t) {
         worker.do_work(t);
     }
 }
+
+
+ParsedLineData parse_line(std::string line) {
+
+    ParsedLineData line_data;
+    std::list<std::string> kv_tokens;
+    std::string token;
+
+    std::istringstream token_stream(line);
+    char delimiter = ' ';
+
+    //std::getline(token_stream, line_data.element_type, delimiter); STR TO ENUM
+
+    while (std::getline(token_stream, token, delimiter)) {
+        kv_tokens.push_back(token);
+    }
+
+
+
+    for(auto& kv_token: kv_tokens) {
+        std::size_t delimiter_pos = kv_token.find('=');
+        std::string key = kv_token.substr(0, delimiter_pos);
+        kv_token.erase(0, delimiter_pos);
+
+        line_data.parameters.insert({key, kv_token});
+    }
+    return line_data;
+}
+
+
+
+Factory& load_factory_structure(std::istream& is) {
+    Factory factory;
+    std::string line;
+    while (std::getline(is, line)) {
+        if(line.empty() or line[0] == ';') {
+            continue;
+        }
+        ParsedLineData data = parse_line(line);
+        switch(data.element_type) {
+            case LOADING_RAMP:
+                ;
+            case WORKER:
+                ;
+            case STOREHAUSE:
+                ;
+            case LINK:
+                ;
+        }
+    }
+    return factory;
+}

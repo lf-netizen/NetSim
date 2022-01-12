@@ -8,6 +8,8 @@
 #include "nodes.hpp"
 #include "storage_types.hpp"
 #include <algorithm>
+#include <istream>
+#include <sstream>
 
 #ifndef NETSIM_FACTORY_HPP
 #define NETSIM_FACTORY_HPP
@@ -100,6 +102,31 @@ private:
     NodeCollection<Worker> workers_;
     NodeCollection<Storehouse> storehouses_;
 };
+
+Factory& load_factory_structure(std::istream& is);
+
+void save_factory_structure(Factory& factory, std::ostream& os);
+
+enum ElementType {
+    LOADING_RAMP,
+    WORKER,
+    STOREHAUSE,
+    LINK
+};
+
+struct ParsedLineData {
+    ElementType element_type;
+    std::map<std::string, std::string> parameters;
+};
+
+ParsedLineData parse_line(std::string line);
+
+
+
+
+
+
+
 
 
 #endif //NETSIM_FACTORY_HPP
