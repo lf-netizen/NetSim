@@ -52,6 +52,7 @@ public:
     const_iterator end() const override { return stockpile_->end(); }
 
     ReceiverType get_receiver_type() const override { return ReceiverType::STOREHOUSE; }
+    bool is_storehouse_empty() const { return stockpile_->empty(); }
 
 private:
     ElementID id_;
@@ -144,6 +145,7 @@ public:
     ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
     const std::optional<Package>& get_processing_buffer() const { return work_buffer_;}
     PackageQueueType get_worker_queue_type() const { return queue_->get_queue_type();}
+    const std::unique_ptr<IPackageQueue>& get_worker_queue() const {return queue_;}
 
 private:
     ElementID id_;
