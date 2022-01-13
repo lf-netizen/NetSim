@@ -242,3 +242,10 @@ Factory load_factory_structure(std::istream& is) {
     }
     return factory;
 }
+
+
+void save_factory_structure(Factory& factory, std::ostream& os) {
+    os << "";
+    factory.ramp_begin();
+    /// TO IMPLEMENT
+}

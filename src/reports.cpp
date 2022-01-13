@@ -141,7 +141,7 @@ void generate_simulation_turn_report(const Factory& factory, std::ostream& os, T
         os << std::endl << "WORKER #" << worker_it->get_id() << std::endl;
         os << "  PBuffer: ";
         if(worker_it->get_processing_buffer() != std::nullopt){
-            os << "#" << worker_it->get_processing_buffer()->get_id() << " (pt = " << worker_it->get_processing_duration() << ")" << std::endl;
+            os << "#" << worker_it->get_processing_buffer()->get_id() << " (pt = " << worker_it->get_package_processing_start_time() << ")" << std::endl;
         }
         else{
             os << "(empty)" << std::endl;
