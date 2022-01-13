@@ -41,7 +41,7 @@ public:
 
 class Storehouse : public IPackageReceiver {
 public:
-    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> p = std::make_unique<PackageQueue>(PackageQueue(FIFO))) : id_(id) { stockpile_ = std::move(p); }
+    Storehouse(ElementID id, std::unique_ptr<IPackageStockpile> p = std::make_unique<PackageQueue>(PackageQueue(PackageQueueType::FIFO))) : id_(id) { stockpile_ = std::move(p); }
 
     ElementID get_id() const override { return id_; }
     void receive_package(Package&& p) override { stockpile_->push(std::move(p)); }
@@ -133,6 +133,7 @@ public:
 
     TimeOffset get_processing_duration() const { return pd_; }
     Time get_package_processing_start_time() const { return pst_; }
+    IPackageQueue* get_queue() const {return queue_.get(); }
 
     const_iterator cbegin() const override { return queue_->cbegin(); }
     const_iterator cend() const override { return queue_->cend(); }

@@ -149,17 +149,37 @@ void Factory::do_work(Time t) {
     }
 }
 
+std::map<std::string, ElementType> str_to_el_type = {
+        {"LOADING_RAMP", ElementType::LOADING_RAMP},
+        {"WORKER", ElementType::WORKER},
+        {"STOREHOUSE", ElementType::STOREHOUSE},
+        {"LINK", ElementType::LINK}
+};
+
+std::map<std::string, PackageQueueType> str_to_pq_type = {
+        {"FIFO", PackageQueueType::FIFO},
+        {"LIFO", PackageQueueType::LIFO}
+};
+
+std::pair<std::string, std::string> make_pair(std::string& s, char delimiter) {
+    std::size_t delimiter_pos = s.find(delimiter);
+    std::string first = s.substr(0, delimiter_pos);
+    s.erase(0, delimiter_pos+1);
+    return std::make_pair(first, s);
+}
 
 ParsedLineData parse_line(std::string line) {
 
     ParsedLineData line_data;
     std::list<std::string> kv_tokens;
     std::string token;
+    std::string id_str;
 
     std::istringstream token_stream(line);
     char delimiter = ' ';
 
-    //std::getline(token_stream, line_data.element_type, delimiter); STR TO ENUM
+    std::getline(token_stream, id_str, delimiter);
+    line_data.element_type = str_to_el_type[id_str];
 
     while (std::getline(token_stream, token, delimiter)) {
         kv_tokens.push_back(token);
@@ -168,18 +188,35 @@ ParsedLineData parse_line(std::string line) {
 
 
     for(auto& kv_token: kv_tokens) {
-        std::size_t delimiter_pos = kv_token.find('=');
-        std::string key = kv_token.substr(0, delimiter_pos);
-        kv_token.erase(0, delimiter_pos);
-
-        line_data.parameters.insert({key, kv_token});
+        line_data.parameters.insert(make_pair(kv_token, '='));
     }
     return line_data;
 }
+PackageSender* str_to_src(std::pair<std::string, std::string> src, Factory& factory) {
+    if (src.first == "ramp") {
+        return &(*factory.find_ramp_by_id(std::stoi(src.second)));
+    }
+    else if (src.first == "worker") {
+        return &(*factory.find_worker_by_id(std::stoi(src.second)));
+    }
+    else {
+        throw std::logic_error("unknown link source");
+    }
+}
+IPackageReceiver* str_to_dest(std::pair<std::string, std::string> dest, Factory& factory) {
+    if (dest.first == "store") {
+        return &(*factory.find_storehouse_by_id(std::stoi(dest.second)));
+    }
+    else if (dest.first == "worker") {
+        return &(*factory.find_worker_by_id(std::stoi(dest.second)));
+    }
+    else {
+        throw std::logic_error("unknown link dest");
+    }
+}
 
 
-
-Factory& load_factory_structure(std::istream& is) {
+Factory load_factory_structure(std::istream& is) {
     Factory factory;
     std::string line;
     while (std::getline(is, line)) {
@@ -188,14 +225,19 @@ Factory& load_factory_structure(std::istream& is) {
         }
         ParsedLineData data = parse_line(line);
         switch(data.element_type) {
-            case LOADING_RAMP:
-                ;
-            case WORKER:
-                ;
-            case STOREHAUSE:
-                ;
-            case LINK:
-                ;
+            case ElementType::LOADING_RAMP:
+                factory.add_ramp(Ramp(std::stoi(data.parameters["id"]), std::stoi(data.parameters["delivery-interval"])));
+                break;
+            case ElementType::WORKER:
+                factory.add_worker(Worker(std::stoi(data.parameters["id"]), std::stoi(data.parameters["processing-time"]), std::make_unique<PackageQueue>(str_to_pq_type[data.parameters["queue-type"]])));
+                break;
+            case ElementType::STOREHOUSE:
+                factory.add_storehouse(std::stoi(data.parameters["id"]));
+                break;
+            case ElementType::LINK:
+                std::pair<std::string, std::string> src = make_pair(data.parameters["src"], '-');
+                std::pair<std::string, std::string> dest = make_pair(data.parameters["dest"], '-');
+                str_to_src(src, factory)->receiver_preferences_.add_receiver(str_to_dest(dest, factory));
         }
     }
     return factory;

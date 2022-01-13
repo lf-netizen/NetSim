@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <istream>
 #include <sstream>
+#include <string>
 
 #ifndef NETSIM_FACTORY_HPP
 #define NETSIM_FACTORY_HPP
@@ -103,14 +104,14 @@ private:
     NodeCollection<Storehouse> storehouses_;
 };
 
-Factory& load_factory_structure(std::istream& is);
+Factory load_factory_structure(std::istream& is);
 
 void save_factory_structure(Factory& factory, std::ostream& os);
 
-enum ElementType {
+enum class ElementType {
     LOADING_RAMP,
     WORKER,
-    STOREHAUSE,
+    STOREHOUSE,
     LINK
 };
 

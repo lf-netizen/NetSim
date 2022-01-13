@@ -4,7 +4,7 @@ project(NetSim)
 set(CMAKE_CXX_STANDARD 17)
 
 #add_compile_options(-Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion)
-add_compile_options(-Wall -Wextra -Werror -Wpedantic -pedantic-errors -Werror=switch)
+#add_compile_options(-Wall -Wextra -Werror -Wpedantic -pedantic-errors -Werror=switch)
 
 include_directories(include
                     include/factory
@@ -80,3 +80,11 @@ target_include_directories(NetSim__factory PUBLIC
         )
 target_link_libraries(NetSim__factory gmock)
 
+add_executable(NetSim__factoryIO ${SOURCE_FILES} test/test_factory_io.cpp test/main_gtest.cpp)
+target_compile_definitions(NetSim__factoryIO PUBLIC EXERCISE_ID=EXERCISE_ID_REPORTING)
+target_include_directories(NetSim__factoryIO PUBLIC
+        googletest-master/googlemock/include
+        googletest-master/googletest/include
+        mocks
+        )
+target_link_libraries(NetSim__factoryIO gmock)

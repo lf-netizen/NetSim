@@ -6,6 +6,7 @@
 #define NETSIM_STORAGE_TYPES_HPP
 
 #include <list>
+#include <map>
 #include "package.hpp"
 
 // definicja typu wyliczeniowego PackageQueueType
