@@ -9,34 +9,34 @@
 #include <vector>
 //#include <cstdlib>
 
-bool cmp(std::pair<IPackageReceiver*, double>& a,
-         std::pair<IPackageReceiver*, double>& b)
-{
-    return a.first->get_id() < b.first->get_id();
-}
-
-std::map<IPackageReceiver*, double> sort(const std::map<IPackageReceiver*, double>& M)
-{
-
-    // Declare vector of pairs
-    std::vector<std::pair<IPackageReceiver*, double>> A;
-
-    // Copy key-value pair from Map
-    // to vector of pairs
-    for (auto& it : M) {
-        A.emplace_back(it);
-    }
-
-    // Sort using comparator function
-    sort(A.begin(), A.end(), cmp);
-
-    std::map<IPackageReceiver*, double> m2;
-
-    for(auto& it: A) {
-        m2.insert(it);
-    }
-    return m2;
-}
+//bool cmp(std::pair<IPackageReceiver*, double>& a,
+//         std::pair<IPackageReceiver*, double>& b)
+//{
+//    return a.first->get_id() < b.first->get_id();
+//}
+//
+//std::map<IPackageReceiver*, double> sort(const std::map<IPackageReceiver*, double>& M)
+//{
+//
+//    // Declare vector of pairs
+//    std::vector<std::pair<IPackageReceiver*, double>> A;
+//
+//    // Copy key-value pair from Map
+//    // to vector of pairs
+//    for (auto& it : M) {
+//        A.emplace_back(it);
+//    }
+//
+//    // Sort using comparator function
+//    sort(A.begin(), A.end(), cmp);
+//
+//    std::map<IPackageReceiver*, double> m2;
+//
+//    for(auto& it: A) {
+//        m2.insert(it);
+//    }
+//    return m2;
+//}
 
 
 void generate_structure_report(const Factory& factory, std::ostream& os){
@@ -47,13 +47,28 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
         os << "LOADING RAMP #" << ramp_it->get_id() << std::endl;
         os << "  Delivery interval: " << ramp_it->get_delivery_interval() << std::endl;
         os << "  Receivers:" << std::endl;
-        for(auto it = ramp_it->receiver_preferences_.cbegin(); it != ramp_it->receiver_preferences_.cend(); it++) {
-            if(it->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
-                os << "    storehouse #" << it->first->get_id() << std::endl;
+
+
+        std::set<ElementID> worker_ids;
+        std::set<ElementID> storehouse_ids;
+
+
+        for(auto receiver_preference : ramp_it->receiver_preferences_.get_preferences()) {
+            if(receiver_preference.first->get_receiver_type() == ReceiverType::STOREHOUSE) {
+                storehouse_ids.insert(receiver_preference.first->get_id());
+//                os << "    storehouse #" << receiver_preference.first->get_id() << std::endl;
             }
-            if(it->first->get_receiver_type() == ReceiverType::WORKER) {
-                os << "    worker #" << it->first->get_id() << std::endl;
+            if(receiver_preference.first->get_receiver_type() == ReceiverType::WORKER) {
+                worker_ids.insert(receiver_preference.first->get_id());
+//                os << "    worker #" << receiver_preference.first->get_id() << std::endl;
             }
+        }
+
+        for(auto id: worker_ids) {
+            os << "    worker #" << id << std::endl;
+        }
+        for(auto id: storehouse_ids) {
+            os << "    storehouse #" << id << std::endl;
         }
     }
     os << std::endl << std::endl;
@@ -72,61 +87,28 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
         os << "  Receivers:" << std::endl;
 
 
-
-//
-//
-//        template<typename A, typename B>
-//        std::pair<B,A> flip_pair(const std::pair<A,B> &p)
-//        {
-//            return std::pair<B,A>(p.second, p.first);
-//        }
-//
-//        template<typename A, typename B>
-//        std::multimap<B,A> flip_map(const std::map<A,B> &src)
-//        {
-//            std::multimap<B,A> dst;
-//            std::transform(src.begin(), src.end(), std::inserter(dst, dst.begin()),
-//                           flip_pair<A,B>);
-//            return dst;
-//        }
-//
-//
-//
-//        std::vector<std::pair> vec;
-//
-//      // copy key-value pairs from the map to the vector
-//        std::copy(worker_it->receiver_preferences_.begin(),
-//                  worker_it->receiver_preferences_.end(),
-//                  std::back_inserter<std::vector<std::pair>>(vec));
-//
-//        // sort the vector by increasing the order of its pair's second value
-//        // if the second value is equal, order by the pair's first value
-//        std::sort(vec.begin(), vec.end(),
-//                  [](const std::pair &l, const std::pair &r)
-//                  {
-//                      if (l.second != r.second) {
-//                          return l.second < r.second;
-//                      }
-//
-//                      return l.first < r.first;
-//                  });
+        std::set<ElementID> worker_ids;
+        std::set<ElementID> storehouse_ids;
 
 
-        // Sort using comparator function
-        // sort(worker_it->receiver_preferences_);
-
-
-
-        std::map<IPackageReceiver*, double> m = sort(worker_it->receiver_preferences_.get_preferences());
-
-        for(auto receiver_preference : m) {
+        for(auto receiver_preference : worker_it->receiver_preferences_.get_preferences()) {
             if(receiver_preference.first->get_receiver_type() == ReceiverType::STOREHOUSE) {
-                os << "    storehouse #" << receiver_preference.first->get_id() << std::endl;
+                storehouse_ids.insert(receiver_preference.first->get_id());
+//                os << "    storehouse #" << receiver_preference.first->get_id() << std::endl;
             }
             if(receiver_preference.first->get_receiver_type() == ReceiverType::WORKER) {
-                os << "    worker #" << receiver_preference.first->get_id() << std::endl;
+                worker_ids.insert(receiver_preference.first->get_id());
+//                os << "    worker #" << receiver_preference.first->get_id() << std::endl;
             }
         }
+
+        for(auto id: worker_ids) {
+            os << "    worker #" << id << std::endl;
+        }
+        for(auto id: storehouse_ids) {
+            os << "    storehouse #" << id << std::endl;
+        }
+
     }
     os << std::endl << std::endl;
     os << "== STOREHOUSES ==" << std::endl;
