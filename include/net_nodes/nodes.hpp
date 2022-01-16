@@ -71,15 +71,16 @@ public:
     ProbabilityGenerator pg;
     preferences_t preferences;
 
-    const_iterator cbegin() const {return preferences.cbegin(); }
-    const_iterator cend() const {return preferences.cend(); }
-    const_iterator begin() const {return preferences.begin(); }
-    const_iterator end() const {return preferences.end(); }
+    const_iterator cbegin() const { return preferences.cbegin(); }
+    const_iterator cend() const { return preferences.cend(); }
+    const_iterator begin() const { return preferences.begin(); }
+    const_iterator end() const { return preferences.end(); }
 
     void add_receiver (IPackageReceiver* r);
     void remove_receiver (IPackageReceiver* r);
     IPackageReceiver* choose_receiver();
-    const preferences_t& get_preferences() const { return preferences; }
+    [[nodiscard]] const preferences_t& get_preferences() const { return preferences; }
+    preferences_t& get_preferences() { return preferences; }
 
 private:
     void rescale_probabilities();
@@ -94,19 +95,22 @@ public:
 
     PackageSender(PackageSender&& other) = default;
 
+    //PackageSender& operator=(PackageSender&& other);
+
     void send_package();
 
     const std::optional<Package>& get_sending_buffer() const { return to_send_buffer_; }
 
 protected:
     std::optional<Package> to_send_buffer_;
-    void push_package(Package&& p) {to_send_buffer_ = std::move(p); }
+    void push_package(Package&& p) { to_send_buffer_ = std::move(p); }
 
 };
 
 class Ramp : public PackageSender {
 public:
     Ramp(ElementID id, TimeOffset di) : PackageSender(), id_(id), di_(di) {}
+
 
     ElementID get_id() const { return id_; }
     TimeOffset get_delivery_interval() const { return di_; }
@@ -144,8 +148,8 @@ public:
     void receive_package (Package&& p) override { queue_->push(std::move(p)); }
 
     ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
-    const std::optional<Package>& get_processing_buffer() const { return work_buffer_;}
-    PackageQueueType get_worker_queue_type() const { return queue_->get_queue_type();}
+    const std::optional<Package>& get_processing_buffer() const { return work_buffer_; }
+    PackageQueueType get_worker_queue_type() const { return queue_->get_queue_type(); }
     const std::unique_ptr<IPackageQueue>& get_worker_queue() const {return queue_;}
 
 private:

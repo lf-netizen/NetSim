@@ -13,6 +13,22 @@ void generate_structure_report(const Factory& factory, std::ostream& oss);
 void generate_simulation_turn_report(const Factory& factory, std::ostream& oss, Time t);
 
 
+class IntervalReportNotifier {
+public:
+    IntervalReportNotifier(TimeOffset to);
+
+    bool should_generate_report(Time t);
+private:
+};
+
+class SpecificTurnsReportNotifier {
+public:
+    SpecificTurnsReportNotifier(std::set<Time> turns);
+
+    bool should_generate_report(Time t);
+private:
+};
+
 //void gener_receivers(const Factory& factory, std::ostringstream& os);
 
 //void sort(std::map<IPackageReceiver *, double> M);

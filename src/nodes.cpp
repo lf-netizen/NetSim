@@ -32,6 +32,14 @@ void ReceiverPreferences::remove_receiver(IPackageReceiver *r) {
 }
 
 
+//PackageSender& PackageSender::operator=(PackageSender&& other) {
+////    assigned_IDs_.erase(id_);
+////    freed_IDs_.insert(id_);
+////    copied_ = true;
+////    id_ = other.id_;
+//    return *this;
+//}
+
 void PackageSender::send_package() {
     if (to_send_buffer_) {
         receiver_preferences_.choose_receiver()->receive_package(std::move(to_send_buffer_.value()));

@@ -9,32 +9,34 @@
 #include <vector>
 //#include <cstdlib>
 
-// Comparator function to sort pairs
-// according to second value
-//bool cmp(std::pair<IPackageReceiver *, double>& a,
-//         std::pair<IPackageReceiver *, double>& b)
-//{
-//    return a.second < b.second;
-//}
-//
-//// Function to sort the map according
-//// to value in a (key-value) pairs
-//void sort(std::map<IPackageReceiver *, double> M)
-//{
-//
-//    // Declare vector of pairs
-//    std::vector<std::pair<IPackageReceiver *, double> > A;
-//
-//    // Copy key-value pair from Map
-//    // to vector of pairs
-//    for (auto& it : M) {
-//        A.push_back(it);
-//    }
-//
-//    // Sort using comparator function
-//    std::sort(A.begin(), A.end(), cmp);
-//
-//}
+bool cmp(std::pair<IPackageReceiver*, double>& a,
+         std::pair<IPackageReceiver*, double>& b)
+{
+    return a.first->get_id() < b.first->get_id();
+}
+
+std::map<IPackageReceiver*, double> sort(const std::map<IPackageReceiver*, double>& M)
+{
+
+    // Declare vector of pairs
+    std::vector<std::pair<IPackageReceiver*, double>> A;
+
+    // Copy key-value pair from Map
+    // to vector of pairs
+    for (auto& it : M) {
+        A.emplace_back(it);
+    }
+
+    // Sort using comparator function
+    sort(A.begin(), A.end(), cmp);
+
+    std::map<IPackageReceiver*, double> m2;
+
+    for(auto& it: A) {
+        m2.insert(it);
+    }
+    return m2;
+}
 
 
 void generate_structure_report(const Factory& factory, std::ostream& os){
@@ -57,7 +59,7 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
     os << std::endl << std::endl;
     os << "== WORKERS ==" << std::endl;
 
-    for (auto worker_it = factory.worker_cbegin(); worker_it != factory.worker_cend(); worker_it++){
+    for (auto worker_it = factory.worker_begin(); worker_it != factory.worker_end(); worker_it++){
         os << std::endl << "WORKER #" << worker_it->get_id() << std::endl;
         os << "  Processing time: " << worker_it->get_processing_duration() << std::endl;
         os << "  Queue type: "; //<< //std::to_string(worker_it->get_worker_queue_type());
@@ -115,14 +117,14 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
 
 
 
+        std::map<IPackageReceiver*, double> m = sort(worker_it->receiver_preferences_.get_preferences());
 
-
-        for(auto it = worker_it->receiver_preferences_.cbegin(); it != worker_it->receiver_preferences_.cend(); it++) {
-            if(it->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
-                os << "    storehouse #" << it->first->get_id() << std::endl;
+        for(auto receiver_preference : m) {
+            if(receiver_preference.first->get_receiver_type() == ReceiverType::STOREHOUSE) {
+                os << "    storehouse #" << receiver_preference.first->get_id() << std::endl;
             }
-            if(it->first->get_receiver_type() == ReceiverType::WORKER) {
-                os << "    worker #" << it->first->get_id() << std::endl;
+            if(receiver_preference.first->get_receiver_type() == ReceiverType::WORKER) {
+                os << "    worker #" << receiver_preference.first->get_id() << std::endl;
             }
         }
     }

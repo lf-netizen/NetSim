@@ -20,9 +20,10 @@ set(SOURCE_FILES
         src/factory.cpp
         src/helpers.cpp
         src/reports.cpp
+        src/simulation.cpp
         )
 
-add_executable(NetSim__debug ${SOURCE_FILES} main.cpp)
+add_executable(NetSim__debug ${SOURCE_FILES} main.cpp src/simulation.cpp)
 
 set(SOURCE_FILES_TESTS
         test/mytests.cpp
