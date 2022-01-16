@@ -15,17 +15,15 @@ void simulate(Factory& f, TimeOffset d, std::function<void (Factory&, Time)> rf)
 
     for(TimeOffset i=1; i<d+1; i++) {
         // symulacja
-
-
-
-        // czy generować raport?
+            //dostawa
+        f.do_deliveries(i);
+            //przekazanie
+        f.do_package_passing();
+            //przetworzenie
+        f.do_work(i);
+            //raportowanie
         rf(f, i);
-
-
-
-
     }
-
 }
 
 

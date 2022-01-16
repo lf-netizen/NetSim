@@ -15,18 +15,20 @@ void generate_simulation_turn_report(const Factory& factory, std::ostream& oss, 
 
 class IntervalReportNotifier {
 public:
-    IntervalReportNotifier(TimeOffset to);
+    IntervalReportNotifier(TimeOffset to) : to_(to) {}
 
     bool should_generate_report(Time t);
 private:
+    TimeOffset to_;
 };
 
 class SpecificTurnsReportNotifier {
 public:
-    SpecificTurnsReportNotifier(std::set<Time> turns);
+    SpecificTurnsReportNotifier(std::set<Time> turns) : turns_(turns) {}
 
     bool should_generate_report(Time t);
 private:
+    std::set<Time> turns_;
 };
 
 //void gener_receivers(const Factory& factory, std::ostringstream& os);

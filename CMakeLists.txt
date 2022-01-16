@@ -89,3 +89,12 @@ target_include_directories(NetSim__factoryIO PUBLIC
         mocks
         )
 target_link_libraries(NetSim__factoryIO gmock)
+
+add_executable(NetSim__simulate ${SOURCE_FILES} test/test_simulate.cpp test/main_gtest.cpp)
+target_compile_definitions(NetSim__simulate PUBLIC EXERCISE_ID=EXERCISE_ID_REPORTING)
+target_include_directories(NetSim__simulate PUBLIC
+        googletest-master/googlemock/include
+        googletest-master/googletest/include
+        mocks
+        )
+target_link_libraries(NetSim__simulate gmock)

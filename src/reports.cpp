@@ -172,3 +172,13 @@ void generate_simulation_turn_report(const Factory& factory, std::ostream& os, T
     os << std::endl;
 }
 
+bool IntervalReportNotifier::should_generate_report(Time t) {
+    return t % to_ == 1;
+}
+
+bool SpecificTurnsReportNotifier::should_generate_report(Time t) {
+    return turns_.find(t) != turns_.end();
+}
+
+
+

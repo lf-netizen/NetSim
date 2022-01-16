@@ -245,7 +245,39 @@ Factory load_factory_structure(std::istream& is) {
 
 
 void save_factory_structure(Factory& factory, std::ostream& os) {
-    os << "";
-    factory.ramp_begin();
+    for (auto ramp_it = factory.ramp_cbegin(); ramp_it != factory.ramp_cend(); ramp_it++) {
+        os << "LOADING_RAMP id=" << ramp_it->get_id() << " delivery-interval=" << ramp_it->get_delivery_interval() << std::endl;
+    }
+
+    for (auto worker_it = factory.worker_begin(); worker_it != factory.worker_end(); worker_it++) {
+        os << "WORKER id=" << worker_it->get_id() << " processing-time=" << worker_it->get_processing_duration() << " queue-type=";
+        if(worker_it->get_worker_queue_type() == PackageQueueType::FIFO){
+            os << "FIFO" << std::endl;
+        }
+        if(worker_it->get_worker_queue_type() == PackageQueueType::LIFO){
+            os << "LIFO" << std::endl;
+        }
+    }
+    for (auto store_it = factory.storehouse_begin(); store_it != factory.storehouse_end(); store_it++) {
+        os << "STOREHOUSE id=" << store_it->get_id() << std::endl;
+    }
+    for (auto ramp_it = factory.ramp_cbegin(); ramp_it != factory.ramp_cend(); ramp_it++) {
+        for (auto it: ramp_it->receiver_preferences_) {
+            os << "LINK src=ramp-" << ramp_it->get_id() << " dest=worker-" << it.first->get_id() << std::endl;
+        }
+    }
+    for (auto worker_it = factory.worker_cbegin(); worker_it != factory.worker_cend(); worker_it++) {
+        for (auto it: worker_it->receiver_preferences_) {
+            os << "LINK src=worker-" << worker_it->get_id();
+            if(it.first->get_receiver_type() == ReceiverType::WORKER) {
+                os << " dest=worker-" << it.first->get_id() << std::endl;
+            }
+            if(it.first->get_receiver_type() == ReceiverType::STOREHOUSE) {
+                os << " dest=store-" << it.first->get_id() << std::endl;
+            }
+        }
+    }
+
+
     /// TO IMPLEMENT
 }
