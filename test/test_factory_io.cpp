@@ -64,26 +64,26 @@ TEST(FactoryIOTest, ParseLinkOneReceiver) {
     EXPECT_DOUBLE_EQ(prefs[key], 1.0);
 }
 
-//TEST(FactoryIOTest, ParseLinkOneReceiverWithDefinedProbability) {
-//    std::ostringstream oss;
-//    oss << "LOADING_RAMP id=1 delivery-interval=3" << "\n"
-//        << "STOREHOUSE id=1" << "\n"
-//        << "LINK src=ramp-1 dest=store-1 p=1.0" << "\n";
-//    std::istringstream iss(oss.str());
-//    auto factory = load_factory_structure(iss);
-//
-//    ASSERT_EQ(std::next(factory.ramp_cbegin(), 1), factory.ramp_cend());
-//    const auto& r = *(factory.ramp_cbegin());
-//
-//    ASSERT_EQ(std::next(factory.storehouse_cbegin(), 1), factory.storehouse_cend());
-//    const auto& s = *(factory.storehouse_cbegin());
-//
-//    auto prefs = r.receiver_preferences_.get_preferences();
-//    ASSERT_EQ(1U, prefs.size());
-//    auto key = dynamic_cast<IPackageReceiver*>(const_cast<Storehouse*>(&s));
-//    ASSERT_NE(prefs.find(key), prefs.end());
-//    EXPECT_DOUBLE_EQ(prefs[key], 1.0);
-//}
+TEST(FactoryIOTest, ParseLinkOneReceiverWithDefinedProbability) {
+    std::ostringstream oss;
+    oss << "LOADING_RAMP id=1 delivery-interval=3" << "\n"
+        << "STOREHOUSE id=1" << "\n"
+        << "LINK src=ramp-1 dest=store-1 p=1.0" << "\n";
+    std::istringstream iss(oss.str());
+    auto factory = load_factory_structure(iss);
+
+    ASSERT_EQ(std::next(factory.ramp_cbegin(), 1), factory.ramp_cend());
+    const auto& r = *(factory.ramp_cbegin());
+
+    ASSERT_EQ(std::next(factory.storehouse_cbegin(), 1), factory.storehouse_cend());
+    const auto& s = *(factory.storehouse_cbegin());
+
+    auto prefs = r.receiver_preferences_.get_preferences();
+    ASSERT_EQ(1U, prefs.size());
+    auto key = dynamic_cast<IPackageReceiver*>(const_cast<Storehouse*>(&s));
+    ASSERT_NE(prefs.find(key), prefs.end());
+    EXPECT_DOUBLE_EQ(prefs[key], 1.0);
+}
 
 TEST(FactoryIOTest, ParseLinkMultipleReceivers) {
     std::ostringstream oss;

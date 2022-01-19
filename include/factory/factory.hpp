@@ -39,6 +39,8 @@ public:
     const_iterator begin() const { return v_.begin(); }
     const_iterator end() const { return v_.end(); }
 
+    void sort_container(std::function<bool(Node&, Node&)> f) {v_.sort(f); }
+
 private:
     container_t v_;
 };
@@ -46,7 +48,9 @@ private:
 
 class Factory {
 public:
-    void add_ramp(Ramp&& ramp) { ramps_.add(std::move(ramp)); }
+    void sort_ramps() {ramps_.sort_container([](Ramp& a, Ramp& b){return a.get_id() < b.get_id(); }); }
+    void add_ramp(Ramp&& ramp) { ramps_.add(std::move(ramp));
+                                 sort_ramps();}
     void remove_ramp(ElementID id) { ramps_.remove_by_id(id); }
     NodeCollection<Ramp>::iterator find_ramp_by_id(ElementID id) { return ramps_.find_by_id(id); }
     NodeCollection<Ramp>::const_iterator find_ramp_by_id(ElementID id) const { return ramps_.find_by_id(id); }
@@ -57,7 +61,9 @@ public:
     NodeCollection<Ramp>::const_iterator ramp_begin() const { return ramps_.begin(); }
     NodeCollection<Ramp>::const_iterator ramp_end() const { return ramps_.end(); }
 
-    void add_worker(Worker&& worker) { workers_.add(std::move(worker)); }
+    void sort_workers() {workers_.sort_container([](Worker& a, Worker& b){return a.get_id() < b.get_id(); }); }
+    void add_worker(Worker&& worker) { workers_.add(std::move(worker));
+                                       sort_workers(); }
     void remove_worker(ElementID id) { remove_receiver(workers_, id); }
     NodeCollection<Worker>::iterator find_worker_by_id(ElementID id) { return workers_.find_by_id(id); }
     NodeCollection<Worker>::const_iterator find_worker_by_id(ElementID id) const { return workers_.find_by_id(id); }
@@ -68,7 +74,9 @@ public:
     NodeCollection<Worker>::const_iterator worker_begin() const { return workers_.begin(); }
     NodeCollection<Worker>::const_iterator worker_end() const { return workers_.end(); }
 
-    void add_storehouse(Storehouse&& storehouse) { storehouses_.add(std::move(storehouse)); }
+    void sort_storehouses() {storehouses_.sort_container([](Storehouse& a, Storehouse& b){return a.get_id() < b.get_id(); }); }
+    void add_storehouse(Storehouse&& storehouse) { storehouses_.add(std::move(storehouse));
+                                                   sort_storehouses(); }
     void remove_storehouse(ElementID id) { remove_receiver(storehouses_, id); }
     NodeCollection<Storehouse>::iterator find_storehouse_by_id(ElementID id) { return storehouses_.find_by_id(id); }
     NodeCollection<Storehouse>::const_iterator find_storehouse_by_id(ElementID id) const { return storehouses_.find_by_id(id); }

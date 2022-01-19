@@ -40,8 +40,11 @@
 
 
 void generate_structure_report(const Factory& factory, std::ostream& os){
+
+
     os << std::endl;
     os << "== LOADING RAMPS ==" << std::endl;
+
     for (auto ramp_it = factory.ramp_cbegin(); ramp_it != factory.ramp_cend(); ramp_it++){
         os << std::endl;
         os << "LOADING RAMP #" << ramp_it->get_id() << std::endl;
@@ -64,12 +67,13 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
             }
         }
 
-        for(auto id: worker_ids) {
-            os << "    worker #" << id << std::endl;
-        }
         for(auto id: storehouse_ids) {
             os << "    storehouse #" << id << std::endl;
         }
+        for(auto id: worker_ids) {
+            os << "    worker #" << id << std::endl;
+        }
+
     }
     os << std::endl << std::endl;
     os << "== WORKERS ==" << std::endl;
@@ -102,12 +106,13 @@ void generate_structure_report(const Factory& factory, std::ostream& os){
             }
         }
 
-        for(auto id: worker_ids) {
-            os << "    worker #" << id << std::endl;
-        }
         for(auto id: storehouse_ids) {
             os << "    storehouse #" << id << std::endl;
         }
+        for(auto id: worker_ids) {
+            os << "    worker #" << id << std::endl;
+        }
+
 
     }
     os << std::endl << std::endl;
